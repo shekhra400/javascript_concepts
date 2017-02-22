@@ -1,0 +1,6 @@
+todo list
+
+javascript currying
+concept of settimeout
+concept of javascript threads
+javascript engine, queue
