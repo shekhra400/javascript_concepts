@@ -72,8 +72,8 @@ function say(greeting) {
     console.log(greeting + ' ' + this.firstName + ' ' + this.lastName);
 }
  
-say.call(person1, 'Hello'); // Hello Jon Kuperman
-say.call(person2, 'Hello'); // Hello Kelly King
+// say.call(person1, 'Hello'); // Hello Jon Kuperman
+// say.call(person2, 'Hello'); // Hello Kelly King
 
 //apply is similar to call except that it takes an array-like object instead of listing
 // the arguments out one at a time
@@ -85,8 +85,8 @@ function say(greeting) {
     console.log(greeting + ' ' + this.firstName + ' ' + this.lastName);
 }
  
-say.apply(person1, ['Hello']); // Hello Jon Kuperman
-say.apply(person2, ['Hello']); // Hello Kelly King
+// say.apply(person1, ['Hello']); // Hello Jon Kuperman
+// say.apply(person2, ['Hello']); // Hello Kelly King
 
 
 // bind attaches this into function and it needs to be invoked separately like this:
@@ -101,5 +101,55 @@ function say() {
 var sayHelloJon = say.bind(person1);
 var sayHelloKelly = say.bind(person2);
  
-sayHelloJon(); // Hello Jon Kuperman
-sayHelloKelly(); // Hello Kelly King
+// sayHelloJon(); // Hello Jon Kuperman
+// sayHelloKelly(); // Hello Kelly King
+
+/*-------------------------------------------------------------------------------------*/
+
+// Javascript objects in details
+
+/*Reference Data Type and Primitive Data Types
+One of the main differences between reference data type and primitive data types is 
+reference data type’s value is stored as a reference, it is not stored directly on the 
+variable, as a value, as the primitive data types are*/
+var person = {name: "Kobe"};
+var anotherPerson = person;
+person.name = "Bryant";
+console.log(anotherPerson.name);
+console.log(person.name);
+    
+//Creating Objects
+// 1.Object Literals
+
+var mango = {
+    color: "yellow",
+    shape: "round",
+    sweetness: 8,
+    howSweetAmI: function () {
+        console.log("Hmm Hmm Good");
+    }
+}
+//2.Object constructor
+
+var mango =  new Object ();
+mango.color = "yellow";
+mango.shape= "round";
+mango.sweetness = 8;
+mango.howSweetAmI = function () {
+// console.log("Hmm Hmm Good");
+}
+
+//How to Access Properties on an Object
+
+/* 1.Dot Notation
+ object.property;
+ */
+ /*
+2.Bracket Notation
+object[property];
+ */
+var school = {schoolName:"MIT"};
+console.log(school.hasOwnProperty("schoolName"));
+console.log("toString" in school);
+
+// To check own property use "hasOwnProperty" else for all property use "in"
