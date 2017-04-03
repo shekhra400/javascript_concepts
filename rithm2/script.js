@@ -243,13 +243,33 @@ if useCapture = true then event | event bubble from outer to inner
 class,id,element,property
  */
 
-$(Document).ready(function(){
-    console.log($('.container').html());
-    console.log($('.container').text());
-    console.log($('input.name').val());
-})
+// $(document).ready(function(){
+//     console.log($('.container').html());
+//     console.log($('.container').text());
+//     console.log($('input.name').val());
+// });
 
 //for traversing in nodes we use
 /*
 find/parent/children/prev/next
  */
+
+/*--------------------------------------------------------------------------------------------------*/
+//THIS concept
+
+// 4 ways to bind this
+/*
+-Default binding | window object without context of any class
+-implicit binding-
+-explicit binding
+- new binding
+ */
+
+//default binding
+var win = this;
+// console.log(win);
+function abc(){
+    console.log(this);
+}
+// var a = new abc();
+// a();
