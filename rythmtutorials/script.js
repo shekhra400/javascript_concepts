@@ -40,3 +40,7 @@ function sendMessage(message,myFunc){
 sendMessage('hello world',console.log);
 sendMessage('hello world',alert);
 sendMessage('hello world',confirm);
+
+/*--------------------------------------------------------------------------------------------*/
+
+//
