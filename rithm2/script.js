@@ -235,7 +235,7 @@ if useCapture = true then event | event bubble from outer to inner
 // })
 
 // $(document).ready(function(){
-    // console.err
+// console.err
 // })
 
 //Jquery selector
@@ -266,10 +266,21 @@ find/parent/children/prev/next
  */
 
 //default binding
-var win = this;
+// var win = this;
 // console.log(win);
-function abc(){
-    console.log(this);
-}
+// function abc(){
+//     console.log(this);
+// }
 // var a = new abc();
 // a();
+var i =1;
+var container = document.getElementById('container');
+container.addEventListener('click', function (e) {
+    container.addEventListener('click', function (e) {
+        console.log(i++);
+        container.addEventListener('click', function (e) {
+        e.preventDefault();
+        return false;
+    });
+    });
+});
