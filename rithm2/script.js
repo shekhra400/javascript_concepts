@@ -261,8 +261,9 @@ find/parent/children/prev/next
 /*
 -Default binding | window object without context of any class
 -implicit binding-
--explicit binding
-- new binding
+-explicit binding | call, apply, bind(bind works with closure)
+- new binding | The new keyword - when the new keyword is used, the keyword this refers to an object 
+that is created from a function after the new keyword (usually called a constructor function).
  */
 
 //default binding
@@ -284,3 +285,68 @@ container.addEventListener('click', function (e) {
     });
     });
 });
+function abc() {
+    // console.log(this);
+}
+// var a = new abc();
+// a();
+
+//implicit binding
+//function with this keyword is part of any object, and according to implicit 
+//rule this refers to immidiate parent object
+
+// var obj = {
+//     value:'shukla',
+//     sayHello: function(){
+//         return this.value + ' shekhar';
+//     }
+// }
+// console.log(obj.sayHello());
+
+// var instructor = {
+//     firstName: 'Tim',
+//     info: {
+//         catOwner: true,
+//         boatOwner: true,
+//         displayLocation: function () {
+//             return this.location;
+//         },
+//         data: {
+//             location: "Oakland",
+//             displayLocation: function () {
+//                 return this.location;
+//             },
+//             logLocation: function(){
+//                 return function(){
+//                     return 'closure';
+//                 }
+//             }
+//         }
+//     },
+// }
+
+// console.log(instructor.info.data.logLocation()());
+
+/*--------------------------------------------------------------------------------------------------*/
+//OOPS
+
+/*
+encapsulate or grouping of code in the logical group
+Implement super in javascript 
+*/
+
+// function Vehicle(name,regNumber){
+//     this.name = name;
+//     this.regNumber = regNumber;
+// }
+
+// function Car(name,regNumber,model,type){
+//     Vehicle.call(this,name,regNumber);
+//     this.type= type;
+//     this.model = model;
+// }
+
+// var ford = new Car('ford',122131,2017,'diesel');
+// console.log(ford);
+
+//Prototype
