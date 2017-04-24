@@ -333,4 +333,78 @@ Implement super in javascript
 // var ford = new Car('ford',122131,2017,'diesel');
 // console.log(ford);
 
-//Prototype
+//ES^ class
+/* 
+all the functions which are static are direct member of class others are added in prototype
+*/
+
+//In Previous old javascript
+// function Person(firstName, lastName){
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+// }
+
+// Person.prototype.sayHi = function(){
+//     return this.firstName + " " + this.lastName + " says hello!";   
+// }
+
+// Person.isPerson = function(person){
+//     return person.constructor === Person;
+// }
+
+//In ES6
+// class Person {
+//     constructor(firstName, lastName){
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//     }
+//     sayHi(){
+//         return `${this.firstName} ${this.lastName} says hello!`;
+//     }
+//     static isPerson(person){
+//         return person.constructor === Person;
+//     }
+// }
+// Object.ass
+
+/*--------------------------------------------------------------------------------------------------*/
+
+//Promises
+// function first(){
+//     return new Promise(function(resolve,reject){
+//         setTimeout(function(){
+//             console.log("first is done");
+//             // resolve(10);
+//              setTimeout(function(){
+//             console.log("firsts is done");
+//              resolve(10);
+//         },1500);
+       
+//         },1500);
+       
+//     })
+// }
+// first().then(function(data){
+//     console.log(data);
+//     console.log('done');
+// })
+
+//Generators
+/*
+In ES2015, a special type of function called a generator was introduced. Generator functions are
+functions that can return multiple values using the yield keyword. Previously, we have only seen
+functions that return once, but generators can change that for us. Let's start with a simple generator 
+example (generator functions are denoted using a *)
+*/
+
+// function each(arr,fn){
+//     for (var i = 0; i < arr.length; i++) {
+//         fn(arr[i]);        
+//     }
+// }
+// each([5,6,7,8],function(data){
+//     console.log(data);
+// })
+
+//async and await
+
