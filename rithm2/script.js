@@ -267,8 +267,24 @@ that is created from a function after the new keyword (usually called a construc
  */
 
 //default binding
-var win = this;
+// var win = this;
 // console.log(win);
+// function abc(){
+//     console.log(this);
+// }
+// var a = new abc();
+// a();
+var i =1;
+var container = document.getElementById('container');
+container.addEventListener('click', function (e) {
+    container.addEventListener('click', function (e) {
+        console.log(i++);
+        container.addEventListener('click', function (e) {
+        e.preventDefault();
+        return false;
+    });
+    });
+});
 function abc() {
     // console.log(this);
 }
