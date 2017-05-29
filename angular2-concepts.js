@@ -121,11 +121,13 @@ let config = '{ "some": "json", "config": "data" }'
 const NUMBERS = new InjectionToken('app.numbers');
 const CONFIG = new InjectionToken('app.config');
 
+providers: [
+  { provide: NUMBERS, useValue: numbers },
+  { provide: CONFIG, useValue: config }
+]
 
+constructor(@Inject(NUMBERS) numbers: number[], @Inject(CONFIG) config: string)
 */
-
-
-
 /*----------------------------------------------------------------------------------------------- */
 
 
@@ -135,3 +137,13 @@ const CONFIG = new InjectionToken('app.config');
 
 
 /*----------------------------------------------------------------------------------------------- */
+/*
+Things to learn
+-viewchild,contentchild,
+-routing explained,
+-why typescript
+-how typescript used  ES6
+-updated in angular4
+-testing(component,services,integrated)
+-
+ */
